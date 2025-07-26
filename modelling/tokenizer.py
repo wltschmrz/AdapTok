@@ -7,7 +7,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from huggingface_hub import PyTorchModelHubMixin
-
+import os, sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from modelling.modules import Encoder, Decoder, TimmViTEncoder, TimmViTDecoder
 from modelling.quantizers.vq import VectorQuantizer
@@ -586,7 +587,7 @@ if __name__ == '__main__':
     # model = VQ_16(codebook_embed_dim=16, enc_type='vit', dec_type='vit', encoder_model='vit_base_patch14_dinov2.lvd142m', decoder_model='vit_base_patch14_dinov2.lvd142m', repa=True, repa_model='vit_base_patch14_dinov2.lvd142m', repa_align='avg_1d_shuffle', enc_img_res=True, enc_img_align='avg_1d', dec_img_res=True)    
     # model = SoftVQ_16(codebook_embed_dim=16, enc_type='vit', dec_type='vit', encoder_model='vit_base_patch14_dinov2.lvd142m', decoder_model='vit_base_patch14_dinov2.lvd142m', num_codebooks=4, codebook_size=16384, topk=16)
     # model = AE_16(codebook_embed_dim=16, enc_type='vit', dec_type='vit', encoder_model='vit_base_patch14_dinov2.lvd142m', decoder_model='vit_base_patch14_dinov2.lvd142m', num_codebooks=4, codebook_size=16384)
-    model = MaskAE_16(codebook_embed_dim=16, enc_type='vit', dec_type='vit', encoder_model='vit_base_patch14_dinov2.lvd142m', decoder_model='vit_base_patch14_dinov2.lvd142m', num_codebooks=4, codebook_size=16384, aux_dec_model='vit_tinytiny_patch14_dinov2_movq2', aux_loss_mask=True, aux_dec_cls_token=True, aux_hog_dec=True, aux_dino_dec=True, aux_clip_dec=True, enc_token_drop=0.4, enc_token_drop_max=0.6)      
+    model = MaskAE_16(codebook_embed_dim=16, enc_type='vit', dec_type='vit', encoder_model='vit_tiny_patch14_dinov2.lvd142m', decoder_model='vit_tiny_patch14_dinov2.lvd142m', num_codebooks=4, codebook_size=16384, aux_dec_model='vit_tinytiny_patch14_dinov2_movq2', aux_loss_mask=True, aux_dec_cls_token=True, aux_hog_dec=True, aux_dino_dec=True, aux_clip_dec=True, enc_token_drop=0.4, enc_token_drop_max=0.6)      
     model.train()
     model = model.cuda()
     # model = KL_16(codebook_embed_dim=16, enc_type='vit', dec_type='vit', encoder_model='vit_base_patch14_dinov2.lvd142m', decoder_model='vit_base_patch14_dinov2.lvd142m')

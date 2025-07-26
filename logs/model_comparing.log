@@ -1,0 +1,562 @@
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2187: UserWarning: Overwriting vit_tiny_patch16_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_tiny_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_tiny_patch16_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2206: UserWarning: Overwriting vit_tiny_patch16_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_tiny_patch16_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_tiny_patch16_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2215: UserWarning: Overwriting vit_small_patch32_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_small_patch32_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_small_patch32_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2224: UserWarning: Overwriting vit_small_patch32_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_small_patch32_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_small_patch32_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2233: UserWarning: Overwriting vit_small_patch16_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_small_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_small_patch16_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2242: UserWarning: Overwriting vit_small_patch16_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_small_patch16_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_small_patch16_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2251: UserWarning: Overwriting vit_small_patch8_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_small_patch8_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_small_patch8_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2260: UserWarning: Overwriting vit_base_patch32_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch32_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch32_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2270: UserWarning: Overwriting vit_base_patch32_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch32_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch32_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2280: UserWarning: Overwriting vit_base_patch16_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2290: UserWarning: Overwriting vit_base_patch16_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2300: UserWarning: Overwriting vit_base_patch8_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch8_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch8_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2310: UserWarning: Overwriting vit_large_patch32_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch32_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch32_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2319: UserWarning: Overwriting vit_large_patch32_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch32_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch32_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2329: UserWarning: Overwriting vit_large_patch16_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch16_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2339: UserWarning: Overwriting vit_large_patch16_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch16_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch16_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2349: UserWarning: Overwriting vit_large_patch14_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch14_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch14_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2358: UserWarning: Overwriting vit_huge_patch14_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_huge_patch14_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_huge_patch14_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2367: UserWarning: Overwriting vit_giant_patch14_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_giant_patch14_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_giant_patch14_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2376: UserWarning: Overwriting vit_gigantic_patch14_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_gigantic_patch14_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_gigantic_patch14_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2386: UserWarning: Overwriting vit_base_patch16_224_miil in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_224_miil. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_224_miil(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2397: UserWarning: Overwriting vit_medium_patch16_gap_240 in registry with modelling.modules.timm_vit.vision_transformer.vit_medium_patch16_gap_240. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_medium_patch16_gap_240(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2409: UserWarning: Overwriting vit_medium_patch16_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_medium_patch16_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_medium_patch16_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2421: UserWarning: Overwriting vit_medium_patch16_gap_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_medium_patch16_gap_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_medium_patch16_gap_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2433: UserWarning: Overwriting vit_betwixt_patch16_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_betwixt_patch16_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_betwixt_patch16_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2445: UserWarning: Overwriting vit_base_patch16_gap_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_gap_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_gap_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2456: UserWarning: Overwriting vit_huge_patch14_gap_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_huge_patch14_gap_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_huge_patch14_gap_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2467: UserWarning: Overwriting vit_huge_patch16_gap_448 in registry with modelling.modules.timm_vit.vision_transformer.vit_huge_patch16_gap_448. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_huge_patch16_gap_448(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2478: UserWarning: Overwriting vit_giant_patch16_gap_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_giant_patch16_gap_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_giant_patch16_gap_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2490: UserWarning: Overwriting vit_xsmall_patch16_clip_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_xsmall_patch16_clip_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_xsmall_patch16_clip_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2499: UserWarning: Overwriting vit_medium_patch32_clip_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_medium_patch32_clip_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_medium_patch32_clip_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2509: UserWarning: Overwriting vit_medium_patch16_clip_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_medium_patch16_clip_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_medium_patch16_clip_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2518: UserWarning: Overwriting vit_betwixt_patch32_clip_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_betwixt_patch32_clip_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_betwixt_patch32_clip_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2528: UserWarning: Overwriting vit_base_patch32_clip_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch32_clip_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch32_clip_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2539: UserWarning: Overwriting vit_base_patch32_clip_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch32_clip_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch32_clip_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2550: UserWarning: Overwriting vit_base_patch32_clip_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch32_clip_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch32_clip_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2561: UserWarning: Overwriting vit_base_patch32_clip_448 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch32_clip_448. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch32_clip_448(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2572: UserWarning: Overwriting vit_base_patch16_clip_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_clip_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_clip_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2582: UserWarning: Overwriting vit_base_patch16_clip_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_clip_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_clip_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2592: UserWarning: Overwriting vit_large_patch14_clip_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch14_clip_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch14_clip_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2602: UserWarning: Overwriting vit_large_patch14_clip_336 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch14_clip_336. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch14_clip_336(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2612: UserWarning: Overwriting vit_huge_patch14_clip_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_huge_patch14_clip_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_huge_patch14_clip_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2622: UserWarning: Overwriting vit_huge_patch14_clip_336 in registry with modelling.modules.timm_vit.vision_transformer.vit_huge_patch14_clip_336. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_huge_patch14_clip_336(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2632: UserWarning: Overwriting vit_huge_patch14_clip_378 in registry with modelling.modules.timm_vit.vision_transformer.vit_huge_patch14_clip_378. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_huge_patch14_clip_378(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2642: UserWarning: Overwriting vit_giant_patch14_clip_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_giant_patch14_clip_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_giant_patch14_clip_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2654: UserWarning: Overwriting vit_gigantic_patch14_clip_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_gigantic_patch14_clip_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_gigantic_patch14_clip_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2666: UserWarning: Overwriting vit_base_patch32_clip_quickgelu_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch32_clip_quickgelu_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch32_clip_quickgelu_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2678: UserWarning: Overwriting vit_base_patch16_clip_quickgelu_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_clip_quickgelu_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_clip_quickgelu_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2690: UserWarning: Overwriting vit_large_patch14_clip_quickgelu_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch14_clip_quickgelu_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch14_clip_quickgelu_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2702: UserWarning: Overwriting vit_large_patch14_clip_quickgelu_336 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch14_clip_quickgelu_336. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch14_clip_quickgelu_336(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2714: UserWarning: Overwriting vit_huge_patch14_clip_quickgelu_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_huge_patch14_clip_quickgelu_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_huge_patch14_clip_quickgelu_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2726: UserWarning: Overwriting vit_huge_patch14_clip_quickgelu_378 in registry with modelling.modules.timm_vit.vision_transformer.vit_huge_patch14_clip_quickgelu_378. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_huge_patch14_clip_quickgelu_378(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2740: UserWarning: Overwriting vit_base_patch32_plus_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch32_plus_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch32_plus_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2750: UserWarning: Overwriting vit_base_patch16_plus_240 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_plus_240. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_plus_240(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2760: UserWarning: Overwriting vit_base_patch16_rpn_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_rpn_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_rpn_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2772: UserWarning: Overwriting vit_small_patch16_36x1_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_small_patch16_36x1_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_small_patch16_36x1_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2784: UserWarning: Overwriting vit_small_patch16_18x2_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_small_patch16_18x2_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_small_patch16_18x2_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2797: UserWarning: Overwriting vit_base_patch16_18x2_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_18x2_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_18x2_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2809: UserWarning: Overwriting eva_large_patch14_196 in registry with modelling.modules.timm_vit.vision_transformer.eva_large_patch14_196. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def eva_large_patch14_196(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2818: UserWarning: Overwriting eva_large_patch14_336 in registry with modelling.modules.timm_vit.vision_transformer.eva_large_patch14_336. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def eva_large_patch14_336(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2826: UserWarning: Overwriting flexivit_small in registry with modelling.modules.timm_vit.vision_transformer.flexivit_small. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def flexivit_small(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2835: UserWarning: Overwriting flexivit_base in registry with modelling.modules.timm_vit.vision_transformer.flexivit_base. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def flexivit_base(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2844: UserWarning: Overwriting flexivit_large in registry with modelling.modules.timm_vit.vision_transformer.flexivit_large. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def flexivit_large(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2853: UserWarning: Overwriting vit_base_patch16_xp_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_xp_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_xp_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2866: UserWarning: Overwriting vit_large_patch14_xp_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch14_xp_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch14_xp_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2879: UserWarning: Overwriting vit_huge_patch14_xp_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_huge_patch14_xp_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_huge_patch14_xp_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2892: UserWarning: Overwriting vit_small_patch14_dinov2 in registry with modelling.modules.timm_vit.vision_transformer.vit_small_patch14_dinov2. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_small_patch14_dinov2(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2902: UserWarning: Overwriting vit_base_patch14_dinov2 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch14_dinov2. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch14_dinov2(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2930: UserWarning: Overwriting vit_large_patch14_dinov2 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch14_dinov2. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch14_dinov2(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2940: UserWarning: Overwriting vit_giant_patch14_dinov2 in registry with modelling.modules.timm_vit.vision_transformer.vit_giant_patch14_dinov2. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_giant_patch14_dinov2(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2957: UserWarning: Overwriting vit_small_patch14_reg4_dinov2 in registry with modelling.modules.timm_vit.vision_transformer.vit_small_patch14_reg4_dinov2. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_small_patch14_reg4_dinov2(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2970: UserWarning: Overwriting vit_base_patch14_reg4_dinov2 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch14_reg4_dinov2. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch14_reg4_dinov2(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2983: UserWarning: Overwriting vit_large_patch14_reg4_dinov2 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch14_reg4_dinov2. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch14_reg4_dinov2(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:2996: UserWarning: Overwriting vit_giant_patch14_reg4_dinov2 in registry with modelling.modules.timm_vit.vision_transformer.vit_giant_patch14_reg4_dinov2. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_giant_patch14_reg4_dinov2(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3013: UserWarning: Overwriting vit_base_patch16_siglip_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_siglip_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_siglip_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3023: UserWarning: Overwriting vit_base_patch16_siglip_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_siglip_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_siglip_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3033: UserWarning: Overwriting vit_base_patch16_siglip_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_siglip_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_siglip_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3043: UserWarning: Overwriting vit_base_patch16_siglip_512 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_siglip_512. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_siglip_512(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3053: UserWarning: Overwriting vit_large_patch16_siglip_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch16_siglip_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch16_siglip_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3063: UserWarning: Overwriting vit_large_patch16_siglip_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch16_siglip_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch16_siglip_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3073: UserWarning: Overwriting vit_so400m_patch14_siglip_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_so400m_patch14_siglip_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_so400m_patch14_siglip_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3083: UserWarning: Overwriting vit_so400m_patch14_siglip_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_so400m_patch14_siglip_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_so400m_patch14_siglip_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3093: UserWarning: Overwriting vit_base_patch16_siglip_gap_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_siglip_gap_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_siglip_gap_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3104: UserWarning: Overwriting vit_base_patch16_siglip_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_siglip_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_siglip_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3115: UserWarning: Overwriting vit_base_patch16_siglip_gap_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_siglip_gap_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_siglip_gap_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3126: UserWarning: Overwriting vit_base_patch16_siglip_gap_512 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_siglip_gap_512. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_siglip_gap_512(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3137: UserWarning: Overwriting vit_large_patch16_siglip_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch16_siglip_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch16_siglip_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3148: UserWarning: Overwriting vit_large_patch16_siglip_gap_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_large_patch16_siglip_gap_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_large_patch16_siglip_gap_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3159: UserWarning: Overwriting vit_so400m_patch14_siglip_gap_224 in registry with modelling.modules.timm_vit.vision_transformer.vit_so400m_patch14_siglip_gap_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_so400m_patch14_siglip_gap_224(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3171: UserWarning: Overwriting vit_so400m_patch14_siglip_gap_384 in registry with modelling.modules.timm_vit.vision_transformer.vit_so400m_patch14_siglip_gap_384. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_so400m_patch14_siglip_gap_384(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3183: UserWarning: Overwriting vit_so400m_patch14_siglip_gap_448 in registry with modelling.modules.timm_vit.vision_transformer.vit_so400m_patch14_siglip_gap_448. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_so400m_patch14_siglip_gap_448(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3195: UserWarning: Overwriting vit_so400m_patch14_siglip_gap_896 in registry with modelling.modules.timm_vit.vision_transformer.vit_so400m_patch14_siglip_gap_896. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_so400m_patch14_siglip_gap_896(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3207: UserWarning: Overwriting vit_wee_patch16_reg1_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_wee_patch16_reg1_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_wee_patch16_reg1_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3218: UserWarning: Overwriting vit_pwee_patch16_reg1_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_pwee_patch16_reg1_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_pwee_patch16_reg1_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3229: UserWarning: Overwriting vit_little_patch16_reg1_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_little_patch16_reg1_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_little_patch16_reg1_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3240: UserWarning: Overwriting vit_little_patch16_reg4_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_little_patch16_reg4_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_little_patch16_reg4_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3251: UserWarning: Overwriting vit_medium_patch16_reg1_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_medium_patch16_reg1_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_medium_patch16_reg1_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3262: UserWarning: Overwriting vit_medium_patch16_reg4_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_medium_patch16_reg4_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_medium_patch16_reg4_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3273: UserWarning: Overwriting vit_mediumd_patch16_reg4_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_mediumd_patch16_reg4_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_mediumd_patch16_reg4_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3284: UserWarning: Overwriting vit_betwixt_patch16_reg1_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_betwixt_patch16_reg1_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_betwixt_patch16_reg1_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3295: UserWarning: Overwriting vit_betwixt_patch16_reg4_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_betwixt_patch16_reg4_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_betwixt_patch16_reg4_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3306: UserWarning: Overwriting vit_base_patch16_reg4_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_base_patch16_reg4_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_base_patch16_reg4_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3317: UserWarning: Overwriting vit_so150m_patch16_reg4_map_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_so150m_patch16_reg4_map_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_so150m_patch16_reg4_map_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/workspace/AdapTok/modelling/modules/timm_vit/vision_transformer.py:3328: UserWarning: Overwriting vit_so150m_patch16_reg4_gap_256 in registry with modelling.modules.timm_vit.vision_transformer.vit_so150m_patch16_reg4_gap_256. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  def vit_so150m_patch16_reg4_gap_256(pretrained: bool = False, **kwargs) -> VisionTransformer:
+/opt/conda/envs/maetok/lib/python3.10/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+## diff vit pruning method
+TimmViTEncoder(
+  (model): VisionTransformer(
+    (patch_embed): PatchEmbed(
+      (proj): Conv2d(3, 384, kernel_size=(14, 14), stride=(14, 14))
+      (norm): Identity()
+    )
+    (pos_drop): Dropout(p=0.0, inplace=False)
+    (patch_drop): Identity()
+    (norm_pre): Identity()
+    (blocks): Sequential(
+      (0): Block(
+        (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (q_norm): Identity()
+          (k_norm): Identity()
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (drop1): Dropout(p=0.0, inplace=False)
+          (norm): Identity()
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop2): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+      (1): Block(
+        (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (q_norm): Identity()
+          (k_norm): Identity()
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (drop1): Dropout(p=0.0, inplace=False)
+          (norm): Identity()
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop2): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+      (2): Block(
+        (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (q_norm): Identity()
+          (k_norm): Identity()
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (drop1): Dropout(p=0.0, inplace=False)
+          (norm): Identity()
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop2): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+      (3): Block(
+        (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (q_norm): Identity()
+          (k_norm): Identity()
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (drop1): Dropout(p=0.0, inplace=False)
+          (norm): Identity()
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop2): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+      (4): Block(
+        (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (q_norm): Identity()
+          (k_norm): Identity()
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (drop1): Dropout(p=0.0, inplace=False)
+          (norm): Identity()
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop2): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+      (5): Block(
+        (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (q_norm): Identity()
+          (k_norm): Identity()
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (drop1): Dropout(p=0.0, inplace=False)
+          (norm): Identity()
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop2): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+      (6): Block(
+        (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (q_norm): Identity()
+          (k_norm): Identity()
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (drop1): Dropout(p=0.0, inplace=False)
+          (norm): Identity()
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop2): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+      (7): Block(
+        (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (q_norm): Identity()
+          (k_norm): Identity()
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (drop1): Dropout(p=0.0, inplace=False)
+          (norm): Identity()
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop2): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+      (8): Block(
+        (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (q_norm): Identity()
+          (k_norm): Identity()
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (drop1): Dropout(p=0.0, inplace=False)
+          (norm): Identity()
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop2): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+      (9): Block(
+        (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (q_norm): Identity()
+          (k_norm): Identity()
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (drop1): Dropout(p=0.0, inplace=False)
+          (norm): Identity()
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop2): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+      (10): Block(
+        (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (q_norm): Identity()
+          (k_norm): Identity()
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (drop1): Dropout(p=0.0, inplace=False)
+          (norm): Identity()
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop2): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+      (11): Block(
+        (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (q_norm): Identity()
+          (k_norm): Identity()
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=384, out_features=1536, bias=True)
+          (act): GELU(approximate='none')
+          (drop1): Dropout(p=0.0, inplace=False)
+          (norm): Identity()
+          (fc2): Linear(in_features=1536, out_features=384, bias=True)
+          (drop2): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+    )
+    (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+    (fc_norm): Identity()
+    (head_drop): Dropout(p=0.0, inplace=False)
+    (head): Identity()
+  )
+)
+====================================================================================================
+VisionTransformerDiffPruning(
+  (patch_embed): PatchEmbed(
+    (proj): Conv2d(3, 384, kernel_size=(16, 16), stride=(16, 16))
+  )
+  (pos_drop): Dropout(p=0.0, inplace=False)
+  (blocks): ModuleList(
+    (0-11): 12 x Block(
+      (norm1): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=384, out_features=1152, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=384, out_features=384, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=384, out_features=1536, bias=True)
+        (act): GELU(approximate='none')
+        (fc2): Linear(in_features=1536, out_features=384, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+  (pre_logits): Identity()
+  (head): Linear(in_features=384, out_features=1000, bias=True)
+  (score_predictor): ModuleList(
+    (0-2): 3 x PredictorLG(
+      (in_conv): Sequential(
+        (0): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+        (1): Linear(in_features=384, out_features=384, bias=True)
+        (2): GELU(approximate='none')
+      )
+      (out_conv): Sequential(
+        (0): Linear(in_features=384, out_features=192, bias=True)
+        (1): GELU(approximate='none')
+        (2): Linear(in_features=192, out_features=96, bias=True)
+        (3): GELU(approximate='none')
+        (4): Linear(in_features=96, out_features=2, bias=True)
+        (5): LogSoftmax(dim=-1)
+      )
+    )
+  )
+)

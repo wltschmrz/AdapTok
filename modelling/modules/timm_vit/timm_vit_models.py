@@ -14,7 +14,6 @@ from modelling.modules.timm_vit.vision_transformer import Attention, MoVQNorm, M
 from modelling.modules.timm_vit.rope_utils import compute_axial_cis, compute_mixed_cis, init_random_2d_freqs, init_t_xy
 
 
-
 def build_mlp(hidden_size, projector_dim, z_dim):
     return nn.Sequential(
                 nn.Linear(hidden_size, projector_dim),
@@ -128,8 +127,6 @@ class TimmViTEncoder(nn.Module):
             for b in self.model.blocks:
                 b.attn.flash_attn = False
         
-
-
     def no_weight_decay(self):
         return ['model.pos_embed', 'model.cls_token', 'model.dist_token', 'latent_tokens', 'latent_pos_embed', 'freqs']
 
@@ -418,11 +415,36 @@ class TimmViTDecoder(nn.Module):
 
 
 if __name__ == '__main__':
+    import os, sys
+    sys.path.append(os.path.dirname(__file__))
+    from dyvit import VisionTransformerDiffPruning
+
     encoder = TimmViTEncoder(num_latent_tokens=256)
-    decoder = TimmViTDecoder(num_latent_tokens=256)
+
+    base_rate = 0.9
+    SPARSE_RATIO = [base_rate, base_rate - 0.2, base_rate - 0.4]
+    PRUNING_LOC = [3, 6, 9]
+    KEEP_RATE = [SPARSE_RATIO[0], SPARSE_RATIO[0] ** 2, SPARSE_RATIO[0] ** 3]
+    encoder2 = model = VisionTransformerDiffPruning(
+            patch_size=16, embed_dim=384, depth=12, num_heads=6, mlp_ratio=4, qkv_bias=True, 
+        pruning_loc=PRUNING_LOC, token_ratio=KEEP_RATE, distill=True
+        )
+
+    print(encoder)
+    print('='*100)
+    print(encoder2)
+
+
+    # encoder = TimmViTEncoder(num_latent_tokens=256)
+    # decoder = TimmViTDecoder(num_latent_tokens=256)
     
-    x = torch.randn(1, 3, 224, 224)
+    # x = torch.randn(1, 3, 224, 224)
     
-    o = encoder(x)
-    print(o.shape)
-    r = decoder(o)
+    # o = encoder(x)
+    # print(o.shape)
+    # r = decoder(o)
+
+
+
+
+
