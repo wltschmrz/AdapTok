@@ -1,0 +1,82 @@
+results_dir: experiments/tokenizer
+cloud_save_path: experiments/tokenizer
+compile: False
+global_seed: 42
+log_every: 50
+vis_every: 5000
+ckpt_every: 10000
+mixed_precision: bf16
+save_best: True
+no_local_save: True
+
+
+dataset: imagenet
+data_path: ./ImageNet/train
+image_size: 256
+
+vq_model: MaskAE-16
+ema: True 
+
+num_latent_tokens: 128
+codebook_embed_dim: 32
+entropy_loss_ratio: 0.0
+
+reconstruction_weight: 1.0
+perceptual_weight: 1.0
+perceptual_warmup: 10000
+disc_weight: 0.4
+disc_adaptive_weight: True
+use_diff_aug: True 
+disc_cr_loss_weight: 4.0
+disc_start: 30000
+disc_type: dino
+disc_loss: hinge
+gen_loss: hinge
+lecam_loss_weight: 0.001
+
+enc_type: vit
+encoder_model: vit_base_patch14_dinov2.lvd142m
+encoder_pretrained: False
+encoder_patch_size: 16
+encoder_tuning_method: full
+dec_type: vit
+decoder_model: vit_base_patch14_dinov2_movqv2
+decoder_pretrained: False 
+decoder_patch_size: 16
+decoder_tuning_method: full
+decoder_drop_path_rate: 0.05
+decoder_cls_token: False
+
+use_ape: False
+use_rope: True
+rope_mixed: True 
+rope_theta: 10.0
+
+enc_token_drop: 0.4
+enc_token_drop_max: 0.6
+aux_decoder_model: vit_tinytiny_patch14_dinov2_movq2
+aux_loss_mask: True
+aux_hog_decoder: True
+aux_dino_decoder: True
+aux_clip_decoder: True
+
+repa: True
+repa_model: vit_large_patch14_dinov2.lvd142m
+repa_patch_size: 16
+repa_proj_dim: 1024
+repa_loss_weight: 0.1
+repa_align: repeat
+
+epochs: 200
+lr: 1.0e-4
+lr_warmup_epochs: 2
+optim: adamw
+lr_scheduler: cosine
+weight_decay: 0.0001
+beta1: 0.9
+beta2: 0.95
+max_grad_norm: 1.0
+global_batch_size: 512
+
+
+
