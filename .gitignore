@@ -6,6 +6,7 @@ tiny-imagenet-200/
 tiny-imagenet-200.zip
 wandb/
 experiments/
+.vscode/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
