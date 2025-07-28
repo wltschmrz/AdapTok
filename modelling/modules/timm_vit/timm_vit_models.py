@@ -421,6 +421,21 @@ if __name__ == '__main__':
 
     encoder = TimmViTEncoder(num_latent_tokens=256)
 
+    TimmViTEncoder(
+        in_channels=3, num_latent_tokens=256,
+        model_name='vit_tiny_patch16_224',  # 'vit_small_patch14_dinov2.lvd142m', 'vit_base_patch14_dinov2.lvd142m',
+        model_kwargs={'img_size': 256, 'patch_size': 16, 'drop_path_rate': 0.0},  # enc_drop_path_rate},
+        pretrained=False,
+        tuning_method='full',
+        tuning_kwargs={'r': 8},
+        use_ape=True, use_rope=False, rope_mixed=False, rope_theta=10.0,
+        token_drop=0.0,
+        token_drop_max=0.6,
+        base_img_size=256
+        )
+
+
+
     base_rate = 0.9
     SPARSE_RATIO = [base_rate, base_rate - 0.2, base_rate - 0.4]
     PRUNING_LOC = [3, 6, 9]
