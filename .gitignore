@@ -2,11 +2,14 @@ pretrained_models/
 samples/
 ImageNet/
 tiny-imagenet-200/
+imagenet10p/
 *.zip
 tiny-imagenet-200.zip
 wandb/
 experiments/
 .vscode/
+*.tar
+*.tar.gz
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
