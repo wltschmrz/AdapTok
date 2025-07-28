@@ -37,7 +37,7 @@ class TimmViTEncoder(nn.Module):
         super().__init__()
 
         self.model_name = model_name
-        assert model_name in ['vit_small_patch14_dinov2.lvd142m', 'vit_base_patch14_dinov2.lvd142m',
+        assert model_name in ['vit_tiny_patch16_224', 'vit_small_patch14_dinov2.lvd142m', 'vit_base_patch14_dinov2.lvd142m',
                               'vit_large_patch14_dinov2.lvd142m', 'vit_giant_patch14_dinov2.lvd142m',
                               'vit_small_patch14_reg4_dinov2.lvd142m', 'vit_base_patch14_reg4_dinov2.lvd142m',
                               'vit_large_patch14_reg4_dinov2.lvd142m',

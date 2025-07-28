@@ -43,6 +43,11 @@ torchrun --nproc_per_node=8 train/train_tokenizer.py --config configs/maetok-b-6
 torchrun --nproc_per_node=1 train/train_tokenizer.py --config configs/maetok-b-64.yaml --global-batch-size 32 --data-path tiny-imagenet-200/train --image-size 256
 torchrun --nproc_per_node=1 train/train_tokenizer.py --config configs/maetok-b-64.yaml --global-batch-size 1 --data-path tiny-imagenet-200/train --image-size 256 --aux-hog-decoder False --aux-dino-decoder False --aux-clip-decoder False --aux-supcls-decoder False
 
+nohup torchrun --nproc_per_node=4 train/train_tokenizer.py \
+  --config configs/maetok-b-64.yaml \
+  --global-batch-size 128 \
+  --data-path data/imagenet10p/train \
+  --image-size 256 > train.log 2>&1 &
 
 ```
 
