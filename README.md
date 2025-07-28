@@ -33,6 +33,13 @@ conda create -n maetok python=3.10 -y; conda activate maetok
 cd MAETok_for_128/ && pip install -r requirements.txt; pip install opencv-python-headless
 # 뒤에도 해주자 hog에서 필요하대.
 wget https://www.image-net.org/data/tiny-imagenet-200.zip && unzip tiny-imagenet-200
+
+# imagenet10p
+gdown 1XySOXm-eh8zcLAi1vM8p7axx9HaXh148
+tar -xzf ./imagenet10p_train.tar.gz
+
+
+
 ```
 
 ## Training 
