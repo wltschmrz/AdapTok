@@ -56,6 +56,8 @@ nohup torchrun --nproc_per_node=4 train/train_tokenizer.py \
   --data-path data/imagenet10p/train \
   --image-size 256 > train.log 2>&1 &
 
+torchrun --nproc_per_node=1 train/train_tokenizer_toy.py
+
 ```
 
 **Train SiT**

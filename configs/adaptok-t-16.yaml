@@ -1,0 +1,100 @@
+results_dir: experiments/tokenizer
+cloud_save_path: experiments/tokenizer
+compile: False
+global_seed: 42
+log_every: 50
+vis_every: 5000
+ckpt_every: 10000
+mixed_precision: bf16
+save_best: True
+no_local_save: True
+
+
+dataset: gridset
+data_path: ./data/gridset/train
+image_size: 128  # <- 256
+
+vq_model: DynamicAE-16
+ema: True
+
+# latent 토큰 상한(변수 길이 실험은 여기서 <=16 사용)
+num_latent_tokens: 16
+codebook_embed_dim: 32
+entropy_loss_ratio: 0.01   # routing 확신도(저엔트로피) 유도. 0.0 -> 0.01  ##### 무슨 의도 일까?
+
+# recon-only로 단순화
+reconstruction_weight: 1.0
+perceptual_weight: 0.0      # flat color에 부적합, 끈다 (1.0 -> 0.0)
+perceptual_warmup: 0  # 10000
+
+disc_weight: 0.0            # GAN 비활성  # 0.2  # 0.4
+disc_adaptive_weight: False
+use_diff_aug: False 
+disc_cr_loss_weight: 0.0
+disc_start: 100000000       # 실질적 비활성 # 30000
+disc_type: none
+disc_loss: hinge
+gen_loss: hinge
+lecam_loss_weight: 0.0  # 0.001
+
+enc_type: vit
+encoder_model: vit_tiny_patch16_224  # vit_base_patch14_dinov2.lvd142m
+encoder_pretrained: False
+encoder_patch_size: 16
+encoder_tuning_method: full
+encoder_drop_path_rate: 0.0  # 얘는 뭐냐?  #####
+encoder_depth: 4            # <-- 추가 키를 지원하도록 코드에 반영 예정
+encoder_embed_dim: 128      # <-- "
+encoder_num_heads: 2        # <-- "
+
+dec_type: vit
+decoder_model: vit_tiny_patch16_224  # vit_base_patch14_dinov2_movqv2
+decoder_pretrained: False 
+decoder_patch_size: 16
+decoder_tuning_method: full
+decoder_drop_path_rate: 0.0  # 0.05  왜???
+decoder_cls_token: False
+decoder_depth: 2            # <-- "
+decoder_embed_dim: 128      # <-- "
+decoder_num_heads: 2        # <-- "
+
+# pos encoding
+use_ape: False
+use_rope: True
+rope_mixed: True
+rope_theta: 10.0
+
+# token drop로 변수 길이 유도하는 놈들이야 얘네? 아니지. 뭐하는 애들인지 알아봐 나중에
+enc_token_drop: 0.4
+enc_token_drop_max: 0.6
+
+# 보조/교사 네트워크 끔
+aux_decoder_model: none
+aux_loss_mask: False
+aux_hog_decoder: False
+aux_dino_decoder: False
+aux_clip_decoder: False
+
+repa: False
+repa_model: vit_large_patch14_dinov2.lvd142m
+repa_patch_size: 16
+repa_proj_dim: 1024
+repa_loss_weight: 0.1
+repa_align: repeat
+
+# optimizer / schedule
+epochs: 240  # 200
+lr: 1.0e-4
+lr_warmup_epochs: 2
+optim: adamw
+lr_scheduler: cosine
+weight_decay: 5e-4  # 0.0001 = 	1e-4
+beta1: 0.9
+beta2: 0.95
+max_grad_norm: 1.0
+global_batch_size: 128     # 4×3090에서 충분. 메모리 보고 1536~2048도 시도.
+
+
+# length penalty(코드에 추가 구현)
+length_penalty_weight: 0.05   # used_tokens / num_latent_tokens
+
