@@ -38,8 +38,8 @@ wget https://www.image-net.org/data/tiny-imagenet-200.zip && unzip tiny-imagenet
 gdown 1XySOXm-eh8zcLAi1vM8p7axx9HaXh148
 tar -xzf ./imagenet10p_train.tar.gz
 
-
-
+https://drive.google.com/file/d/19-cXr1ug0uloGWqjKG9zvr5bxmMtiQ4M/view?usp=drive_link  # grid
+https://drive.google.com/file/d/1XySOXm-eh8zcLAi1vM8p7axx9HaXh148/view?usp=drive_link  # imagenet10p
 ```
 
 ## Training 
