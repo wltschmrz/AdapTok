@@ -146,12 +146,10 @@ class Attention(nn.Module):
         x = self.proj_drop(x)
         return x
 
-
-    
+   
 def modulate(x, shift, scale):
     # return x * (1 + scale) + shift
     return x * scale + shift
-
 
 class MoVQBlockv2(nn.Module):
     def __init__(

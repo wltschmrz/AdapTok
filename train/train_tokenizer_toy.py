@@ -61,6 +61,8 @@ def build_parser():
     add_arg("--kl-loss-weight", type=float, default=0.000001)               # KL loss의 weight
     add_arg("--tau", type=float, default=0.1)                               # temperature 계수 (예: softmax 등에서 사용)
     add_arg("--num-codebooks", type=int, default=1)                         # 병렬로 사용하는 codebook 개수
+
+    add_arg("--mask-weight", type=float, default=1.0)                       # mask loss의 weight
     
     add_arg("--perceptual-weight", type=float, default=1.0)                 # LPIPS perceptual loss의 가중치
     add_arg("--perceptual-loss", type=str, default='vgg', choices=['vgg', 'timm', 'tv'])    # LPIPS에서 사용할 perceptual loss의 종류
@@ -241,7 +243,7 @@ def main(args):
     vq_loss = VQLoss(
         reconstruction_weight=args.reconstruction_weight,       # 1.0
         reconstruction_loss=args.reconstruction_loss,           # l2
-        codebook_weight=args.codebook_weight,                   # 1.0
+        mask_weight=args.mask_weight,                           # 1.0
         wandb_logger=wandb_logger
     ).to(device)
     
@@ -353,8 +355,8 @@ def main(args):
             # generator training
             optimizer.zero_grad()
             with torch.cuda.amp.autocast(dtype=ptdtype):  
-                recons_imgs, codebook_loss, info = vq_model(imgs)
-                loss_gen = vq_loss(codebook_loss, imgs, recons_imgs, optimizer_idx=0, global_step=train_steps+1, 
+                recons_imgs, mask_loss, info = vq_model(imgs)
+                loss_gen = vq_loss(mask_loss, imgs, recons_imgs, optimizer_idx=0, global_step=train_steps+1, 
                                    last_layer=vq_model.module.decoder.last_layer, 
                                    logger=logger, log_every=args.log_every)
             scaler.scale(loss_gen).backward()

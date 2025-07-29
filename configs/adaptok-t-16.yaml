@@ -28,7 +28,7 @@ perceptual_weight: 0.0      # flat color에 부적합, 끈다 (1.0 -> 0.0)
 perceptual_warmup: 0  # 10000
 
 disc_weight: 0.0            # GAN 비활성  # 0.2  # 0.4
-disc_adaptive_weight: False
+disc_adaptive_weight: True
 use_diff_aug: False 
 disc_cr_loss_weight: 0.0
 disc_start: 100000000       # 실질적 비활성 # 30000
@@ -38,7 +38,7 @@ gen_loss: hinge
 lecam_loss_weight: 0.0  # 0.001
 
 enc_type: vit
-encoder_model: vit_tiny_patch16_224  # vit_base_patch14_dinov2.lvd142m
+encoder_model: vit_tiny_patch16_224  # latent: 192 // vit_base_patch14_dinov2.lvd142m
 encoder_pretrained: False
 encoder_patch_size: 16
 encoder_tuning_method: full

@@ -80,8 +80,8 @@ class ModelArgs:
     
     # rope
     use_ape: bool = True 
-    use_rope: bool = False
-    rope_mixed: bool = False
+    use_rope: bool = True
+    rope_mixed: bool = True
     rope_theta: float = 10.0
     
     # repa for vit
@@ -292,12 +292,11 @@ class DynamicAEModel(nn.Module, PyTorchModelHubMixin):
             h, mask, mask_loss = self.encoder(x, return_mask=True)
         else:
             h = self.encoder(x)
-        emb_loss = (torch.tensor(0.), torch.tensor(0.), torch.tensor(0.), mask_loss)
         info = None
         if self.training:
-            return h, emb_loss, info, mask
+            return h, mask_loss, info, mask
         else:
-            return h, emb_loss, info
+            return h, mask_loss, info
 
     def decode(self, h, x=None, h_size=None, w=None):
         dec = self.decoder(h, None, h_size, w)
@@ -311,7 +310,7 @@ class DynamicAEModel(nn.Module, PyTorchModelHubMixin):
             latent, diff, info = self.encode(input)
         self.quant = latent
         # print(quant.shape)
-        dec = self.decode(latent, x=input, h=h, w=w)
+        dec = self.decode(latent, x=input, h_size=h, w=w)
         
         return dec, diff, info
 

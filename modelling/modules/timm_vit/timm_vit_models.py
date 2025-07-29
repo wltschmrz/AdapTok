@@ -163,11 +163,9 @@ class TimmViTEncoder(nn.Module):
         else:
             mask = None 
         
-        if not 'eva02' in self.model_name:
-            x = self.model._pos_embed(x)
-            x = self.model.patch_drop(x)
-        else:
-            x, _ = self.model._pos_embed(x)
+        assert not 'eva02' in self.model_name
+        x = self.model._pos_embed(x)
+        x = self.model.patch_drop(x)
 
         if self.num_latent_tokens:
             # insert latent tokens
@@ -175,8 +173,7 @@ class TimmViTEncoder(nn.Module):
             x = torch.cat([x, z + self.latent_pos_embed], dim=1)
             
         # pre layer norm
-        if not 'eva02' in self.model_name:
-            x = self.model.norm_pre(x)
+        x = self.model.norm_pre(x)
             
         if self.use_ape: 
             for i, blk in enumerate(self.model.blocks):

@@ -12,6 +12,7 @@ from timm.layers import trunc_normal_
 from modelling.modules.timm_vit.to_pixel import ToPixel
 from modelling.modules.timm_vit.vision_transformer import Attention, MoVQNorm, MoVQBlockv2
 from modelling.modules.timm_vit.rope_utils import compute_axial_cis, compute_mixed_cis, init_random_2d_freqs, init_t_xy
+from modelling.modules.timm_vit.dyvit_toy import VisionTransformerDiffPruning
 
 
 def build_mlp(hidden_size, projector_dim, z_dim):
@@ -44,12 +45,17 @@ class TimmViTEncoder(nn.Module):
 
         print(f"model_kwargs:")
         print(model_kwargs)
+        
+        ######
         # load model
-        model = create_model(
-            model_name,
-            pretrained=pretrained,
-            **model_kwargs
-        )
+        base_rate = 0.9
+        PRUNING_LOC = [2, 4, 6]
+        model = VisionTransformerDiffPruning(
+            img_size=128,
+            patch_size=16, embed_dim=192, depth=8, num_heads=2, mlp_ratio=4, qkv_bias=True, 
+            pruning_loc=PRUNING_LOC
+            )
+        model.num_prefix_tokens=0
 
         self.img_size = model_kwargs['img_size']
         self.patch_size = model_kwargs['patch_size']
@@ -85,7 +91,7 @@ class TimmViTEncoder(nn.Module):
         self.rope_mixed = rope_mixed
         self.rope_theta = rope_theta
         
-        assert self.rope_mixed and self.use_rope
+        assert self.rope_mixed and self.use_rope, f"{self.rope_mixed}, {self.use_rope}"
         self.compute_cis = partial(compute_mixed_cis, num_heads=model.num_heads)
         freqs = []
         for i, _ in enumerate(model.blocks):
@@ -127,10 +133,10 @@ class TimmViTEncoder(nn.Module):
                              src=torch.ones(bsz, seq_len, device=x.device))
         return mask
 
-    def forward(self, x, return_mask=False):
+    def forward(self, x, return_mask=False, gumbel_tau=1.0, ):
 
         # get tokens
-        _, _, H, W = x.shape
+        B, _, H, W = x.shape
         x = self.model.patch_embed(x)
 
         if self.token_drop and self.training:
@@ -141,20 +147,26 @@ class TimmViTEncoder(nn.Module):
             mask = None
         
         assert not 'eva02' in self.model_name
-        x = self.model._pos_embed(x)
-        x = self.model.patch_drop(x)
+        # x = self.model._pos_embed(x)
+        x = x + self.model.pos_embed
+        x = self.model.pos_drop(x)
 
-        assert self.num_latent_tokens
+        patch_length = x.size(1)
+
         # insert latent tokens
-        z = self.latent_tokens.expand(x.size(0), -1, -1)
+        z = self.latent_tokens.expand(B, -1, -1)
         x = torch.cat([x, z + self.latent_pos_embed], dim=1)
             
         # pre layer norm
-        x = self.model.norm_pre(x)
-            
-        if self.use_ape: 
-            for i, blk in enumerate(self.model.blocks):
-                x = blk(x)
+        x = self.model.norm(x)
+        
+        p_count = 0
+        losses = []
+        prev_decision = torch.ones(B, patch_length + self.num_latent_tokens, 1, dtype=x.dtype, device=x.device)
+        patch_policy = torch.ones(B, patch_length, 1, dtype=x.dtype, device=x.device)
+        # if self.use_ape: 
+        #     for i, blk in enumerate(self.model.blocks):
+        #         x = blk(x)
         assert self.rope_mixed and self.use_rope
         if self.freqs_t_x.shape[0] != x.shape[1] - self.num_prefix_tokens - self.num_latent_tokens:
             t_x, t_y = init_t_xy(end_x = W // self.patch_size, end_y = H // self.patch_size)
@@ -164,31 +176,100 @@ class TimmViTEncoder(nn.Module):
         freqs_cis = self.compute_cis(self.freqs, t_x, t_y)
         
         for i , blk in enumerate(self.model.blocks):
-            x = blk(x, freqs_cis=freqs_cis[i], num_prefix_tokens=self.num_prefix_tokens, num_latent_tokens=self.num_latent_tokens)
+            if i in self.model.pruning_loc:
+                # latent_x = x[:, -self.num_latent_tokens:]
+                logits = self.model.score_predictor[p_count](
+                    x, 
+                    patch_policy=prev_decision[:, :-self.num_latent_tokens, :],
+                    latent_policy=prev_decision[:, -self.num_latent_tokens:, :],
+                    )  # (BL) <- (BN2)
+                # print(f"##### {logits.shape}")  # ##### torch.Size([128, 16])
+                if self.training:
+                    p_soft = F.gumbel_softmax(logits, tau=gumbel_tau, hard=False, dim=1)
+                    # print(f"##### {p_soft.shape}")  # torch.Size([128, 16])
+                    large_pos = torch.argmax(p_soft, dim=1, keepdim=True)  # (B, 1)
+
+                    # print(f"##### {large_pos.shape}")  ##### torch.Size([128])
+
+                    cumsum_p = torch.cumsum(p_soft, dim=1)
+                    keep_soft = 1.0 - cumsum_p
+                    # print(f"##### {keep_soft.shape}")  ##### torch.Size([128, 16])
+
+                    # mask_loss = torch.sum(keep_soft.sum(dim=1, keepdim=True) / self.num_latent_tokens) / B
+                    mask_loss = keep_soft.sum(dim=1, keepdim=True) / self.num_latent_tokens
+                    # print(f"##### {mask_loss.shape}")    ##### torch.Size([128, 1])
+                    pos = torch.gather(keep_soft, 1, large_pos)
+                    # print(f"##### {pos.shape}")  ##### torch.Size([128, 128])
+                    keep_hard = (keep_soft >= pos).float()
+                    # print(f"##### {keep_hard.shape}")
+                    keep_mask = (keep_hard - keep_soft).detach() + keep_soft   # (B, L)
+                    # print(f"##### {keep_mask.shape}")
+                    hard_keep_decision = keep_mask.reshape(B, self.num_latent_tokens, 1) * prev_decision[:, -self.num_latent_tokens:, :]
+                    # mask_loss  (B, 1)
+
+                    # losses.append(mask_loss.reshape(B, 1))
+                    losses.append(mask_loss.mean())
+                    policy = torch.cat([patch_policy, hard_keep_decision], dim=1)
+                    x = blk(x, policy=policy, freqs_cis=freqs_cis[i], num_prefix_tokens=self.num_prefix_tokens, num_latent_tokens=self.num_latent_tokens)
+                    prev_decision = policy
+                else:
+                    with torch.no_grad():
+                        p_soft = F.softmax(logits, dim=1)
+                        large_pos = torch.argmax(p_soft, dim=1)
+
+                        cumsum_p = torch.cumsum(p_soft, dim=1)
+                        keep_soft = 1.0 - cumsum_p
+
+                        pos = keep_soft[:, large_pos].item()
+                        keep_hard = (keep_soft >= pos).float()
+                        keep_mask = (keep_hard - keep_soft).detach() + keep_soft   # (B, L)
+                        hard_keep_decision = keep_mask.reshape(B, self.num_latent_tokens, 1) * prev_decision[:, -self.num_latent_tokens:, :]
+                        
+                        now_policy = torch.cat([patch_policy, hard_keep_decision], dim=1)
+                        x = batch_index_select(x, now_policy)
+                        prev_decision = batch_index_select(prev_decision, now_policy)
+                        x = blk(x, freqs_cis=freqs_cis[i], num_prefix_tokens=self.num_prefix_tokens, num_latent_tokens=self.num_latent_tokens)
+                p_count += 1
 
         # x = self.model.blocks(x)
         x = self.model.norm(x)
 
-        assert self.num_latent_tokens
         # get z tokens as out
         out = x[:, -self.num_latent_tokens:]
         
         if return_mask:
-            return out, mask
+            return out, mask, losses
         else:
             return out
 
+def batch_index_select(x, idx):
+    if len(x.size()) == 3:
+        B, N, C = x.size()
+        N_new = idx.size(1)
+        offset = torch.arange(B, dtype=torch.long, device=x.device).view(B, 1) * N
+        idx = idx + offset
+        out = x.reshape(B*N, C)[idx.reshape(-1)].reshape(B, N_new, C)
+        return out
+    elif len(x.size()) == 2:
+        B, N = x.size()
+        N_new = idx.size(1)
+        offset = torch.arange(B, dtype=torch.long, device=x.device).view(B, 1) * N
+        idx = idx + offset
+        out = x.reshape(B*N)[idx.reshape(-1)].reshape(B, N_new)
+        return out
+    else:
+        raise NotImplementedError
 
 class TimmViTDecoder(nn.Module):
     def __init__(self, in_channels=3,
-                 model_name='vit_small_patch14_dinov2.lvd142m',
-                 model_kwargs={'img_size': 224, 'patch_size': 14, 'drop_path_rate': 0.0}, pretrained=True,
+                 model_name='vit_tiny_patch16_224',
+                 model_kwargs={'img_size': 128, 'patch_size': 16, 'drop_path_rate': 0.0}, pretrained=True,
                  tuning_method='lora', tuning_kwargs={'r': 8},
-                 num_latent_tokens=32, to_pixel='linear',
+                 num_latent_tokens=16, to_pixel='linear',
                  codebook_embed_dim=32,
                  rope_theta=100.0, rope_mixed=False, use_rope=False, use_ape=True,
                  cls_token=True,
-                 base_img_size=224,
+                 base_img_size=128,
                  ):
         super().__init__()
 
