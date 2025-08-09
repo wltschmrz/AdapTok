@@ -92,7 +92,7 @@ weight_decay: 5e-4  # 0.0001 = 	1e-4
 beta1: 0.9
 beta2: 0.95
 max_grad_norm: 1.0
-global_batch_size: 128     # 4×3090에서 충분. 메모리 보고 1536~2048도 시도.
+global_batch_size: 1536     # 4×3090에서 충분. 메모리 보고 1536~2048도 시도.
 
 
 # length penalty(코드에 추가 구현)

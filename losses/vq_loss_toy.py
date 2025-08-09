@@ -115,8 +115,15 @@ class VQLoss(nn.Module):
         mask_loss2 = codebook_loss[1]
         mask_loss3 = codebook_loss[2]
 
+        loss_function = nn.NLLLoss()
+
+        mask_loss1 = -torch.log(1 - codebook_loss[0] + 1e-8)
+        mask_loss2 = -torch.log(1 - codebook_loss[1] + 1e-8)
+        mask_loss3 = -torch.log(1 - codebook_loss[2] + 1e-8)
+
         total_mask_loss = codebook_loss[4] if len(codebook_loss) > 4 else mask_loss1 + mask_loss2 + mask_loss3
 
+        # assert adaptive_weight is True
         if adaptive_weight:
             null_loss = self.rec_weight * rec_loss
             mask_ad_w1 = self.calculate_adaptive_weight(null_loss, mask_loss1, last_layer=last_layer)
@@ -127,10 +134,11 @@ class VQLoss(nn.Module):
             mask_ad_w1 = mask_ad_w2 = mask_ad_w3 = 1
         # disc_weight = adopt_weight(self.disc_weight, global_step, threshold=self.discriminator_iter_start)
 
-        loss = self.rec_weight * rec_loss + \
-            mask_ad_w1 * self.mask_weight * mask_loss1 + \
-            mask_ad_w2 * self.mask_weight * mask_loss2 + \
-            mask_ad_w3 * self.mask_weight * mask_loss3
+
+        loss = self.rec_weight * rec_loss # + \
+            # mask_ad_w1 * self.mask_weight * mask_loss1 + \
+            # mask_ad_w2 * self.mask_weight * mask_loss2 + \
+            # mask_ad_w3 * self.mask_weight * mask_loss3
             # perceptual_weight * p_loss + \
             # disc_adaptive_weight * disc_weight * generator_adv_loss
         

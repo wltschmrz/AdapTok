@@ -52,7 +52,7 @@ class TimmViTEncoder(nn.Module):
         PRUNING_LOC = [2, 4, 6]
         model = VisionTransformerDiffPruning(
             img_size=128,
-            patch_size=16, embed_dim=192, depth=8, num_heads=2, mlp_ratio=4, qkv_bias=True, 
+            patch_size=16, embed_dim=48, depth=8, num_heads=4, mlp_ratio=4, qkv_bias=True, 
             pruning_loc=PRUNING_LOC
             )
         model.num_prefix_tokens=0
@@ -263,7 +263,7 @@ def batch_index_select(x, idx):
 class TimmViTDecoder(nn.Module):
     def __init__(self, in_channels=3,
                  model_name='vit_tiny_patch16_224',
-                 model_kwargs={'img_size': 128, 'patch_size': 16, 'drop_path_rate': 0.0}, pretrained=True,
+                 model_kwargs={'img_size': 128, 'patch_size': 16, 'drop_path_rate': 0.0, 'embed_dim': 48}, pretrained=True,
                  tuning_method='lora', tuning_kwargs={'r': 8},
                  num_latent_tokens=16, to_pixel='linear',
                  codebook_embed_dim=32,
@@ -282,7 +282,7 @@ class TimmViTDecoder(nn.Module):
         )
         
         self.patch_size = model_kwargs['patch_size']
-        self.embed_dim = model.embed_dim
+        self.embed_dim = model.embed_dim = 48
         # get num of img tokens
         self.num_img_tokens = model.patch_embed.num_patches
         self.num_prefix_tokens = model.num_prefix_tokens
